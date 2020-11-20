@@ -1,0 +1,13 @@
+%h1= 'Listing Todos'
+
+%table.table
+  %thead.thead-dark
+    %tr
+      %th= 'Title'
+      %th= 'Description'
+      %th{:colspan => 2}
+
+  - @todos.each do |todo|
+    %tr
+      %td= todo.tittle
+      %td= todo.text
