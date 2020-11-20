@@ -1,13 +1,16 @@
-%h1= 'Listing Todos'
+.container
+  %h1.center-title= 'Listing Todos'
 
-%table.table
-  %thead.thead-dark
-    %tr
-      %th= 'Title'
-      %th= 'Description'
-      %th{:colspan => 2}
-
-  - @todos.each do |todo|
-    %tr
-      %td= todo.tittle
-      %td= todo.text
+  %table.table
+    %thead.table-info
+      %tr
+        %th{scope:'col'}= 'Id'
+        %th{scope:'col'}= 'Title'
+        %th{scope:'col'}= 'Description'
+        %th{scope:'col', :colspan => 2}
+    %tbody
+      - @todos.each do |todo|
+        %tr
+          %th{scope:'row'}= todo.id
+          %td= todo.tittle
+          %td= todo.text
