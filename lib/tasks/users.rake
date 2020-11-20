@@ -1,6 +1,6 @@
 namespace :users do
   desc 'Create users'
-  task :create, [:name, :email, :password] => [:environment] do |task, args|
+  task :create, %i[name email password] => [:environment] do |_task, args|
     u = User.new
     u.email = args[:email]
     u.name = args[:name]

@@ -1,0 +1,16 @@
+.container
+  %h1.center-title= 'Listing Todos'
+
+  %table.table
+    %thead.table-info
+      %tr
+        %th{scope: 'col'}= 'Id'
+        %th{scope: 'col'}= 'Title'
+        %th{scope: 'col'}= 'Description'
+        %th{scope: 'col', colspan: 2}
+    %tbody
+      - @todos.each do |todo|
+        %tr
+          %th{scope: 'row'}= todo.id
+          %td= todo.title
+          %td= todo.text
