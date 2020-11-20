@@ -1,5 +1,10 @@
 @import "bootstrap";
 
+/*
+*= require_tree .
+*= require_self
+*/
+
 .container {
   content: center;
   margin-top: 30px;
