@@ -1,0 +1,19 @@
+/ Modal
+#todoModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "todoModalLabel", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog.modal-dialog-centered{:role => "document"}
+    .modal-content
+      .modal-header
+        %h5#todoModalLabel.modal-title Create a todo
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+      .modal-body
+      = form_with model: @todo, local:true do |form|
+        .container_modal
+          .form-group
+            %label{:for => "title"} Title
+            %input#title.form-control{:type => "title"}/
+          .form-group
+            %label{:for => "text"} Description
+            %textarea#text.form-control{:rows => "3"}
+          %button.btn.btn-primary{:type => "button"}=form.submit
+          %button.btn.btn-secondary{"data-dismiss" => "modal", :type => "button"} Close
