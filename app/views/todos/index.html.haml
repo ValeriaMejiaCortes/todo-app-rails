@@ -14,3 +14,6 @@
           %th{scope: 'row'}= todo.id
           %td= todo.title
           %td= todo.text
+  %button_tag{type: 'button', class: 'btn btn-outline-info'}
+    = link_to 'New todo', new_todo_path,style: 'text-decoration:none;' 'color:#000000;', remote: true
+  .modal-container
