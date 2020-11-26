@@ -11,9 +11,11 @@
         .container_modal
           .form-group
             %label{:for => "title"} Title
-            %input#title.form-control{:type => "title"}/
+            %br/
+            %input#title.form-control{:type => "title", :name => "todo[title]"}/
           .form-group
             %label{:for => "text"} Description
-            %textarea#text.form-control{:rows => "3"}
-          %button.btn.btn-primary{:type => "button"}=form.submit
+            %br/
+            %textarea#text.form-control{:rows => "3", :name => "todo[text]"}
+          %button.btn.btn-primary{:type => 'submit'} Create
           %button.btn.btn-secondary{"data-dismiss" => "modal", :type => "button"} Close

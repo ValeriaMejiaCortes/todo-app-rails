@@ -13,12 +13,14 @@ class TodosController < ApplicationController
   end
 
   def create
-    @todo = Todo.new(params.require(:todo).permit(:title, :text))
+    @user = User.first
+    @todo = Todo.new(params.require(:todo).permit(:title, :text), user_id: @user.id)
 
+    binding.pry
     if @todo.save
       redirect_to @todo
     else
-      render 'new'
+      puts 'Im here'
     end
   end
 end
